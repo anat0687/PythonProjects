@@ -14,8 +14,12 @@ def printtable(data):
             rowjust.append(jjj)
         tjust.append(rowjust)
         row += 1
-    for i in tjust:
-        print("".join(i))
+
+    rez = [[tjust[j][i] for j in range (len (tjust))] for i in range (len (tjust[0]))]
+    print("\n")
+    for row in rez:
+        print("".join(row))
+
 
 tableData = [['apples', 'oranges', 'cherries', 'banana'],
              ['Alice', 'Bob', 'Carol', 'David'],
