@@ -11,13 +11,13 @@ def dateword(datestr):
     month = int(mo.group(2))
     year = int(mo.group(3))
     if day > 31:
-        print("not a valid date")
+        print("not a valid date, day")
         return
     if month > 12:
-        print("not a valid date")
+        print("not a valid date, month")
         return
     monthword = months[month-1]
-    print(monthword + mo.group(1) + mo.group(2))
+    print(monthword + ' ' + mo.group(1) + ' ' + mo.group(3))
 
 
 test_string = input("please enter a date:\n")
