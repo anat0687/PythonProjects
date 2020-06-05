@@ -27,7 +27,6 @@ for j in range(test_num):
     jsum = sum_divs(j)
     facsums.append(jsum)
 
-print(facsums)
 
 amisum = 0
 for k in range(test_num):
