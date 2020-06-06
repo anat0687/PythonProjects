@@ -10,8 +10,8 @@ def isprime(n):
 
 count = 2
 num = 4
-while count < 10001:
-    if isprime(num) == True:
+while count < 6:
+    if isprime(num):
         count += 1
         lastprime = num
         num += 1
