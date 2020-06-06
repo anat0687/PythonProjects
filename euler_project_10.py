@@ -14,16 +14,15 @@ def isprime(n):
             return True
 
 def psieve(lim):
-    for i in range(1,ceil(lim/2)):
+    numlist = list(range(1, lim+1))
+    numlist[0] = 0
+    for i in range(1, ceil(lim**0.5)):
+        if isprime(i):
+            for k in range(1, lim+1):
+                if k > i and k % i == 0:
+                    numlist[k-1] = 0
+    return numlist
 
 
-
-psum = 0
-
-for k in range(1, 10):
-    if isprime(k):
-        print(k, 'is prime')
-        psum += k
-
-print(psum)
+print(sum(psieve(2000000)))
 
