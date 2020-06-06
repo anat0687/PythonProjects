@@ -9,6 +9,16 @@ def strconv(string):
     return li
 
 
+upmax = 0
+rightmax = 0
+drightmax = 0
+dleftmax = 0
+
+up = 0
+right = 0
+dright = 0
+dleft = 0
+
 numgrid = []
 for i in range(20):
     numgrid.append(strconv(text.readline().rstrip()))
@@ -18,22 +28,29 @@ for row in range(20):
         try:
             up = numgrid[row][col] * numgrid[row-1][col] * numgrid[row-2][col] * numgrid[row-3][col]
         except IndexError:
-            up = None
+            up = 0
         try:
             right = numgrid[row][col] * numgrid[row][col+1] * numgrid[row][col+2] * numgrid[row][col+3]
         except IndexError:
-            right = None
+            right = 0
         try:
             dright = numgrid[row][col] * numgrid[row+1][col+1] * numgrid[row+2][col+2] * numgrid[row+3][col+3]
         except IndexError:
-            dright = None
+            dright = 0
         try:
             dleft = numgrid[row][col] * numgrid[row+1][col-1] * numgrid[row+2][col-2] * numgrid[row+3][col-3]
         except IndexError:
-            dleft = None
+            dleft = 0
+
+        if up > upmax:
+            upmax = up
+        if right > rightmax:
+            rightmax = right
+        if dright > drightmax:
+            drightmax = dright
+        if dleft > dleftmax:
+            dleftmax = dleft
 
 
-print(right)
-print(up)
-print(dleft)
-print(dright)
+print(max(upmax, rightmax, dleftmax, drightmax))
+
