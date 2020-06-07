@@ -21,9 +21,9 @@ def getdivs(n):
 
 i = 1
 
-while len(getdivs(triangle_num(i))) < 500:
+while len(getdivs(triangle_num(i))) < 501:
     i += 1
 
 print(triangle_num(i))
-print(getdivs(triangle_num(i)))
+print(len(getdivs(triangle_num(i))))
 
